@@ -1,0 +1,2 @@
+material_id,saturated_hydraulic_conductivity_m_s,alpha_m_inv,theta_s,theta_r,cohesion_pa,friction_angle_deg,unit_weight_soil_n_m3,unit_weight_water_n_m3,long_term_infiltration_m_s,boundary,drainage_efficiency
+n4n6-Hi,0.0001,0.45,0.3,0.1,10000.0,39.2,19000.0,9810.0,1e-07,finite,0.03

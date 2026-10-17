@@ -1,0 +1,77 @@
+site_name: unsatstab
+site_author: Exneyder A. Montoya-Araque, Daniel F. Ruiz, Emanuel Castillo-Cardona
+copyright: Copyright &copy; 2026 Exneyder A. Montoya-Araque, Daniel F. Ruiz, Emanuel Castillo-Cardona, Universidad EAFIT
+site_description: Spatially distributed infiltration and slope-stability modeling in Python
+site_url: https://eamontoyaa.github.io/unsatstab/
+exclude_docs: |
+  README.md
+  fundamentos.md
+repo_url: https://github.com/eamontoyaa/unsatstab
+repo_name: eamontoyaa/unsatstab
+theme:
+  name: material
+  logo: assets/unsatstab_icon.svg
+  favicon: assets/unsatstab_icon.svg
+  language: en
+  features:
+    - navigation.top
+    - content.code.copy
+    - content.footnote.tooltips
+nav:
+  - Overview: index.md
+  - Theory and foundations: fundamentals.md
+  - Usage and tutorials:
+      - Inputs and outputs: inputs-outputs.md
+      - Single-column response and boundaries: tutorials/01_single_column.ipynb
+      - Antecedent rainfall history: tutorials/02_antecedent_wetness.ipynb
+      - Multiple columns over slope units: tutorials/03_multiple_columns_slope_units.ipynb
+  - Numerical verification:
+      - Scope and checks: verification.md
+      - Baum and Srivastava–Yeh equation sets: verification/01_baum_etal_vs_srivastava_yeh.ipynb
+      - Gardner retention-curve comparison: verification/02_baum_etal_retention_curve.ipynb
+      - Space-time profile verification: verification/03_baum_etal_space_time.ipynb
+      - Srivastava–Yeh homogeneous soils: verification/04_srivastava_yeh_homogeneous_soils.ipynb
+  - Validation case study:
+      - Cerro Bravo study-site application: validation/01_ruiz_etal_case_study.ipynb
+  - API reference:
+      - Overview: api.md
+      - Parameters: api/parameters.md
+      - Rainfall: api/rainfall.md
+      - Basal boundaries: api/boundaries.md
+      - Column solver: api/solver.md
+      - Column results: api/results.md
+      - Spatial slope units: api/slope_units.md
+      - Analytical flow: api/analytical.md
+      - Characteristic roots: api/roots.md
+      - Water table: api/water_table.md
+      - Slope stability: api/stability.md
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+      include_source: true
+      remove_tag_config:
+        remove_input_tags: [remove-input]
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: numpy
+            show_source: false
+            show_signature_annotations: true
+            separate_signature: true
+            members_order: source
+markdown_extensions:
+  - footnotes
+  - admonition
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+extra_css:
+  - assets/stylesheets/extra.css
+extra_javascript:
+  - assets/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

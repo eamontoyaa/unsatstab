@@ -1,0 +1,11 @@
+.md-typeset .unsatstab-logo {
+  float: right;
+  width: 110px;
+  max-width: 28%;
+  height: auto;
+  margin: 0 0 1rem 1.5rem;
+}
+
+.unsatstab-intro-end {
+  clear: both;
+}

@@ -1,0 +1,28 @@
+name: Package and documentation checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          enable-cache: true
+      - run: uv sync --locked --all-groups
+      - run: uv build
+      - run: uv run --locked twine check dist/*
+      - run: uv run --locked pytest -q
+      - run: uv run --locked mkdocs build --strict
+      - uses: actions/upload-artifact@v4
+        with:
+          name: distributions-${{ matrix.python-version }}
+          path: dist/
