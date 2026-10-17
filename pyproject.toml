@@ -39,9 +39,9 @@ Homepage = "https://github.com/eamontoyaa/unsatstab"
 Documentation = "https://eamontoyaa.github.io/unsatstab/"
 Repository = "https://github.com/eamontoyaa/unsatstab"
 Issues = "https://github.com/eamontoyaa/unsatstab/issues"
-"Author: Exneyder A. Montoya-Araque" = "https://www.researchgate.net/profile/Exneyder-A-Montoya-Araque"
-"Author: Daniel F. Ruiz" = "https://www.researchgate.net/profile/Daniel-F-Ruiz-2"
-"Author: Emanuel Castillo-Cardona" = "https://www.researchgate.net/profile/Emanuel-Castillo-Cardona"
+"Exneyder A. Montoya-Araque" = "https://www.researchgate.net/profile/Exneyder-A-Montoya-Araque"
+"Daniel F. Ruiz" = "https://www.researchgate.net/profile/Daniel-F-Ruiz-2"
+"Emanuel Castillo-Cardona" = "https://www.researchgate.net/profile/Emanuel-Castillo-Cardona"
 
 [dependency-groups]
 dev = ["pytest>=8", "build>=1.2", "twine>=6"]
