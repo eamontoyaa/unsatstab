@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "unsatstab"
+version = "1.0.0"
+description = "Spatially distributed unsaturated infiltration and infinite-slope stability modeling."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+authors = [
+    {name = "Exneyder A. Montoya-Araque"},
+    {name = "Daniel F. Ruiz"},
+    {name = "Emanuel Castillo-Cardona"},
+]
+keywords = ["slope stability", "unsaturated flow", "infiltration", "landslides", "TRIGRS", "geoscience"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "numpy>=2.2",
+    "scipy>=1.15",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "geopandas>=1.0",
+    "pyogrio>=0.10",
+    "joblib>=1.4",
+    "tol-colors>=2.2.0",
+    "ipympl>=0.10.0",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/eamontoyaa/unsatstab"
+Documentation = "https://eamontoyaa.github.io/unsatstab/"
+Repository = "https://github.com/eamontoyaa/unsatstab"
+Issues = "https://github.com/eamontoyaa/unsatstab/issues"
+"Author: Exneyder A. Montoya-Araque" = "https://www.researchgate.net/profile/Exneyder-A-Montoya-Araque"
+"Author: Daniel F. Ruiz" = "https://www.researchgate.net/profile/Daniel-F-Ruiz-2"
+"Author: Emanuel Castillo-Cardona" = "https://www.researchgate.net/profile/Emanuel-Castillo-Cardona"
+
+[dependency-groups]
+dev = ["pytest>=8", "build>=1.2", "twine>=6"]
+docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.6,<10", "mkdocstrings[python]>=0.29,<1", "mkdocs-jupyter>=0.26,<1", "tol-colors>=2.2"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/unsatstab"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src/unsatstab", "/tests", "/docs", "/README.md", "/CHANGELOG.md", "/CONTRIBUTING.md", "/LICENSE", "/mkdocs.yml", "/pyproject.toml", "/uv.lock"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
