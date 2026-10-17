@@ -2,6 +2,8 @@
 
 ## 1.0.0
 
+- Preserve Colab's NumPy 2.1.3 when it satisfies the model, and keep notebook-only plotting dependencies out of the runtime installation.
+
 - Provide analytical unsaturated infiltration with the default Srivastava–Yeh constitutive conversion and an explicit Baum et al. comparison set.
 - Compute retained water, estimated water-table rise, pressure, and infinite-slope stability throughout each column.
 - Separate maximum column depth from the optional observation plane; initialize a deeper requested water table at a finite base with zero initial water-column height.
